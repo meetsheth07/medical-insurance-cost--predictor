@@ -221,24 +221,6 @@ python src/train.py --config configs/default.yaml
 # Make predictions
 python src/predict.py --input data/new_customers.csv --output predictions.csv
 ```
-
-### Docker Deployment
-```dockerfile
-FROM python:3.9-slim
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-COPY . .
-EXPOSE 8000
-CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
-```
-
-```bash
-# Build and run
-docker build -t insurance-predictor .
-docker run -p 8000:8000 insurance-predictor
-```
-
 ---
 
 ## ⚡ Performance Optimization
@@ -298,17 +280,6 @@ git commit -s -m "feat: add your feature"
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
-
-## 📧 Contact & Support
-
-**Project Lead:** Your Name  
-- 📧 Email: your.email@company.com  
-- 🔗 LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)  
-- 🐙 GitHub: [github.com/yourusername](https://github.com/yourusername)
-
-**For bug reports or feature requests:**  
-[Open an issue](https://github.com/yourusername/medical-insurance-predictor/issues)
 
 ---
 
